@@ -1,0 +1,47 @@
+###All of our final code goes into this file###
+
+
+
+
+#Count members function
+
+###Video that helped me with this code was: https://www.youtube.com/watch?v=XjfxYfKFXO8&t=339s  The code that I looked at for this is at 5:44 in the video ###
+
+@client.command()
+async def UserCount(ctx):
+    id=client.get_guild(771303091936296970) #Gets the ID of the server 
+    await ctx.channel.send(f"""The amount of members here is: {id.member_count}""") 
+###Displays message saying how many users are in the server and does this by counting the amount of member ID's are in the server###
+
+#Coin Flip function 
+
+###For This coin flip function I used this video to get a good idea of the code needed for this function: https://www.youtube.com/watch?v=W2mIfj3zi-M ######
+
+@client.command()
+async def Coinflip(ctx):
+    result=random.choice(["Heads!!!","Tails!!!"])
+    await ctx.channel.send(f"The result is {result}")
+####End of the code inspired by: https://www.youtube.com/watch?v=W2mIfj3zi-M ####    
+    
+    
+
+#Would you rather Funtion 
+@client.command()
+async def WouldURather(ctx): 
+    Question=random.choice(["Would you rather be A) blind or B) deaf?", ###Picks a random question from the list of all the different would you rather questions###
+    "Would you rather have A) The ability to breath underwater and explore the ocean OR B) Be able to fly and explore the skies?",
+   "Would you rather A) Have your entire life narrated by Morgan Freeman OR B) Have your life be filmed as a documentry by David Attenborough?",
+   "Would you rather have to A) Survive an alien invasion OR B) A zombie apocalypse?",
+   "Would you rather have A) Hot weather OR B) Cold weather?",
+   "Would you rather have A) Super speed OR B) Invisibility?",
+   "Would you rather A) Go to the afterlife OR B) Be a ghost?",
+   "Would you rather A) Never eat again OR B) Never drink again? ",
+   "Would you rather have the ability to A) Read minds OR B) Move things with your mind?",
+   "Would you rather A) Live in the marvel universe OR B) DC universe?",
+   "Would you rather A) Have the ability to vividly remember every memory you have OR B) Have the power to forget whatever you want?",
+   "Would you rather A) Know how you die OR B) When you die?",
+   "Would you rather A) Be in jail for a year OR B) Have the year taken off your life?",
+   "Would you rather A) Visit your past self OR B) Your future self?",
+   "Would you rather have A) Night forever OR B) Day forever?",
+    "Would you rather have A) The ability to become small OR B) The ability to be giant?"])
+    send = await ctx.send(Question) ###Sends the random would you rather question on the discord###
